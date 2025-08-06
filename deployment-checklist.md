@@ -22,7 +22,13 @@ git push -u origin main
 - [ ] Add payment method
 - [ ] Verify account
 
-### 3. Create Managed Database
+### 3. Choose Database Setup
+
+#### **Option A: Simple (No Managed Database)**
+- [ ] Skip this step - use local database container
+- [ ] Use `docker-compose.simple.yml` in deployment
+
+#### **Option B: Professional (Managed Database)**
 - [ ] Go to DigitalOcean → Databases
 - [ ] Create PostgreSQL database
 - [ ] Note down connection details:
@@ -44,8 +50,22 @@ git push -u origin main
 - **Run Command**: Leave empty (Docker)
 - **HTTP Port**: `5678`
 
-### 6. Set Environment Variables
-Add these environment variables:
+### 6. Choose Database Option
+
+#### **Option A: Simple Setup (Local Database Container)**
+Use `docker-compose.simple.yml` - No managed database needed!
+
+Environment variables:
+```
+N8N_PASSWORD=your-secure-password-here
+N8N_HOST=your-app-name.ondigitalocean.app
+WEBHOOK_URL=https://your-app-name.ondigitalocean.app/
+```
+
+#### **Option B: Professional Setup (Managed Database)**
+Use `docker-compose.prod.yml` - More reliable with backups.
+
+Environment variables:
 ```
 N8N_USER=admin
 N8N_PASSWORD=your-secure-password-here
@@ -119,6 +139,12 @@ GENERIC_TIMEZONE=UTC
 
 ## 💰 Cost Breakdown
 
+### **Option A: Simple Setup**
+- **App Platform**: $5-12/month
+- **Managed Database**: $0 (uses container)
+- **Total**: ~$5-12/month
+
+### **Option B: Professional Setup**
 - **App Platform**: $5-12/month
 - **Managed Database**: $15/month
 - **Total**: ~$20-27/month
