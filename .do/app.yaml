@@ -2,12 +2,18 @@ name: n8n-oriyona
 services:
 - name: n8n
   source_dir: /src
-  dockerfile_path: /src/docker-compose.yml
   github:
     repo: fayzzzm/n8n-oriyona
     branch: main
-  run_command: ""
-  build_command: ""
+  run_command: "docker-compose up"
+  build_command: "docker-compose build"
   http_port: 5678
   instance_count: 1
-  instance_size_slug: basic-xxs 
+  instance_size_slug: basic-xxs
+  envs:
+  - key: N8N_PASSWORD
+    value: "changeme"
+  - key: N8N_HOST
+    value: "your-app-name.ondigitalocean.app"
+  - key: WEBHOOK_URL
+    value: "https://your-app-name.ondigitalocean.app/" 

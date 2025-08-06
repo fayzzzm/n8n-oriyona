@@ -1,0 +1,17 @@
+{
+  "name": "n8n-oriyona",
+  "version": "1.0.0",
+  "description": "n8n Workflow Automation Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "docker-compose up",
+    "build": "docker-compose build",
+    "dev": "docker-compose up --build"
+  },
+  "keywords": ["n8n", "automation", "workflow"],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+} 
