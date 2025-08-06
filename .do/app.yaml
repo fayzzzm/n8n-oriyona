@@ -1,0 +1,13 @@
+name: n8n-oriyona
+services:
+- name: n8n
+  source_dir: /
+  dockerfile_path: /docker-compose.yml
+  github:
+    repo: fayzzzm/n8n-oriyona
+    branch: main
+  run_command: ""
+  build_command: ""
+  http_port: 5678
+  instance_count: 1
+  instance_size_slug: basic-xxs 
