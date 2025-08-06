@@ -1,8 +1,8 @@
 name: n8n-oriyona
 services:
 - name: n8n
-  source_dir: /
-  dockerfile_path: /docker-compose.yml
+  source_dir: /src
+  dockerfile_path: /src/docker-compose.yml
   github:
     repo: fayzzzm/n8n-oriyona
     branch: main
